@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\channuoiProject2.props" />
+</Project>
