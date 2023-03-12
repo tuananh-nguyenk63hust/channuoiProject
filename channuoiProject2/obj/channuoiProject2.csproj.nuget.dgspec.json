@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\channuoiProject2\\channuoiProject2\\channuoiProject2.csproj": {}
+    "C:\\channuoiProject\\channuoiProject2\\channuoiProject2.csproj": {}
   },
   "projects": {
-    "D:\\channuoiProject2\\channuoiProject2\\channuoiProject2.csproj": {
+    "C:\\channuoiProject\\channuoiProject2\\channuoiProject2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\channuoiProject2\\channuoiProject2\\channuoiProject2.csproj",
+        "projectUniqueName": "C:\\channuoiProject\\channuoiProject2\\channuoiProject2.csproj",
         "projectName": "channuoiProject2",
-        "projectPath": "D:\\channuoiProject2\\channuoiProject2\\channuoiProject2.csproj",
+        "projectPath": "C:\\channuoiProject\\channuoiProject2\\channuoiProject2.csproj",
         "packagesPath": "C:\\Users\\tanct\\.nuget\\packages\\",
-        "outputPath": "D:\\channuoiProject2\\channuoiProject2\\obj\\",
+        "outputPath": "C:\\channuoiProject\\channuoiProject2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tanct\\AppData\\Roaming\\NuGet\\NuGet.Config",

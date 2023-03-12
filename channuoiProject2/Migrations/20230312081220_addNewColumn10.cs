@@ -5,7 +5,7 @@
 namespace channuoiProject2.Migrations
 {
     /// <inheritdoc />
-    public partial class MyFirstMigration : Migration
+    public partial class addNewColumn10 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -62,7 +62,7 @@ namespace channuoiProject2.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Loaigiayto = table.Column<int>(type: "int", nullable: false)
+                    Link = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -78,28 +78,14 @@ namespace channuoiProject2.Migrations
                     OdichName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Vitri = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Giasuc = table.Column<int>(type: "int", nullable: false),
-                    Soluowng = table.Column<int>(type: "int", nullable: false)
+                    Soluowng = table.Column<int>(type: "int", nullable: false),
+                    vaccinName = table.Column<int>(type: "int", nullable: false),
+                    soluongdatime = table.Column<int>(type: "int", nullable: false),
+                    soluongchuatien = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_odich", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "tiemphong",
-                columns: table => new
-                {
-                    VaccinId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    OdichId = table.Column<int>(type: "int", nullable: false),
-                    VaccinName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Thoigiantiem = table.Column<int>(type: "int", nullable: false),
-                    Soluongdatiem = table.Column<int>(type: "int", nullable: false),
-                    Soluongchuatien = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_tiemphong", x => x.VaccinId);
                 });
 
             migrationBuilder.CreateTable(
@@ -124,12 +110,27 @@ namespace channuoiProject2.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Loaisanxuat = table.Column<int>(type: "int", nullable: false),
-                    Thoigianvanhanh = table.Column<int>(type: "int", nullable: false)
+                    Giasuc = table.Column<int>(type: "int", nullable: false),
+                    Trieutrung = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DichBenhId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_trieutrung", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "vaccin",
+                columns: table => new
+                {
+                    VaccinId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Giasuc = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_vaccin", x => x.VaccinId);
                 });
         }
 
@@ -152,13 +153,13 @@ namespace channuoiProject2.Migrations
                 name: "odich");
 
             migrationBuilder.DropTable(
-                name: "tiemphong");
-
-            migrationBuilder.DropTable(
                 name: "tochucvacanhan");
 
             migrationBuilder.DropTable(
                 name: "trieutrung");
+
+            migrationBuilder.DropTable(
+                name: "vaccin");
         }
     }
 }

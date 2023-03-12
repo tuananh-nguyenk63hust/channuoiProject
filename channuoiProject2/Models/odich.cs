@@ -14,5 +14,6 @@ namespace channuoiProject2
         public string Vitri { get; set; }
         public int Giasuc { get; set; }
         public int Soluowng { get; set; }
+        
     }
 }

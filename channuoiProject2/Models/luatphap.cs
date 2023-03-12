@@ -10,7 +10,7 @@ namespace channuoiProject2
         public int Id { get; set; }
         [StringLength(50)]
         public string Name { get; set; }
-        public int Loaigiayto { get; set; } 
+        public string Link { get; set; } 
         
     }
 }

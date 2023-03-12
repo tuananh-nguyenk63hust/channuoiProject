@@ -7,7 +7,7 @@ namespace channuoiProject2
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-
+        
         public int VaccinId { get; set; }
         public int OdichId { get; set; }
         [StringLength(50)]

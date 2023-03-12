@@ -105,8 +105,9 @@ namespace channuoiProject2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Loaigiayto")
-                        .HasColumnType("int");
+                    b.Property<string>("Link")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -142,39 +143,18 @@ namespace channuoiProject2.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<int>("soluongchuatien")
+                        .HasColumnType("int");
+
+                    b.Property<int>("soluongdatime")
+                        .HasColumnType("int");
+
+                    b.Property<int>("vaccinName")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("odich");
-                });
-
-            modelBuilder.Entity("channuoiProject2.tiemphong", b =>
-                {
-                    b.Property<int>("VaccinId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VaccinId"));
-
-                    b.Property<int>("OdichId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Soluongchuatien")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Soluongdatiem")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Thoigiantiem")
-                        .HasColumnType("int");
-
-                    b.Property<string>("VaccinName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("VaccinId");
-
-                    b.ToTable("tiemphong");
                 });
 
             modelBuilder.Entity("channuoiProject2.tochucvacanhan", b =>
@@ -209,7 +189,10 @@ namespace channuoiProject2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Loaisanxuat")
+                    b.Property<int>("DichBenhId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Giasuc")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -217,12 +200,34 @@ namespace channuoiProject2.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("Thoigianvanhanh")
-                        .HasColumnType("int");
+                    b.Property<string>("Trieutrung")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("trieutrung");
+                });
+
+            modelBuilder.Entity("channuoiProject2.vaccin", b =>
+                {
+                    b.Property<int>("VaccinId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VaccinId"));
+
+                    b.Property<int>("Giasuc")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("VaccinId");
+
+                    b.ToTable("vaccin");
                 });
 #pragma warning restore 612, 618
         }
